@@ -5,9 +5,12 @@ export const isEmpty = (stringArrayOrObject) => {
     return stringArrayOrObject === "";
   } else if (type === "object" && stringArrayOrObject.length === 0) {
     return true;
-  } else {
-    return false;
-  }
+  } else if (
+    type === "object" &&
+    Object.keys(stringArrayOrObject).length === 0
+  ) {
+    return true;
+  } else return false;
 };
 
 //method object keys ...
